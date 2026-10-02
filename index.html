@@ -952,17 +952,50 @@ section{
   ></iframe>
 </div>
 
-<div
-  class="project-links"
-  id="detailLinks"
-></div>
+<div class="project-links" id="detailLinks"></div>
 
-      <div class="project-links" id="detailLinks"></div>
-      <div class="facts"><div class="fact"><small>YEAR</small><strong id="detailYear"></strong></div><div class="fact"><small>MY ROLE</small><strong id="detailRole"></strong></div><div class="fact"><small>DURATION</small><strong id="detailDuration"></strong></div></div>
-      <div class="detail-block"><small>01 / OVERVIEW</small><div><h3>專案背景</h3><p id="detailOverview"></p></div></div>
-      <div class="detail-block"><small>02 / PROCESS</small><div><h3>執行過程</h3><p id="detailProcess"></p></div></div>
-      <div class="detail-block"><small>03 / OUTCOME</small><div><h3>成果與反思</h3><p id="detailOutcome"></p></div></div>
+<div id="detailExtra">
+  <div class="facts">
+    <div class="fact">
+      <small>YEAR</small>
+      <strong id="detailYear"></strong>
     </div>
+
+    <div class="fact">
+      <small>MY ROLE</small>
+      <strong id="detailRole"></strong>
+    </div>
+
+    <div class="fact">
+      <small>DURATION</small>
+      <strong id="detailDuration"></strong>
+    </div>
+  </div>
+
+  <div class="detail-block">
+    <small>01 / OVERVIEW</small>
+    <div>
+      <h3>專案背景</h3>
+      <p id="detailOverview"></p>
+    </div>
+  </div>
+
+  <div class="detail-block">
+    <small>02 / PROCESS</small>
+    <div>
+      <h3>執行過程</h3>
+      <p id="detailProcess"></p>
+    </div>
+  </div>
+
+  <div class="detail-block">
+    <small>03 / OUTCOME</small>
+    <div>
+      <h3>成果與反思</h3>
+      <p id="detailOutcome"></p>
+    </div>
+  </div>
+</div>
   </dialog>
 
   <script>
@@ -1077,22 +1110,34 @@ section{
           outcome:"最終完成既有系統的易用性問題整理及介面重設計。介面設計不應只從視覺美觀出發，而需要有明確的問題依據，每一項設計調整都應回應使用者（我們）在原系統中實際可能遇到的困難。",
         },
  {
-  number: "05",
-  category: "數位圖書館／數位典藏",
-  title: "數位典藏專案",
-  photo: "photos/project-05.png",
-  photoAlt: "誰是音樂祭 NPC 與相機數位紀念館",
- links:[
-  {
-    label:"進入｜誰是音樂祭 NPC",
-    url:"npc.html"
-  },
-  {
-    label:"進入｜黃永相數位紀念館",
-    url:"camera.html"
-  }
-],
- },
+  number:"05",
+  category:"知識與資訊",
+  type:"數位圖書館／數位典藏",
+
+  title:"數位圖書館與數位典藏",
+  summary:"請選擇要查看的專案。",
+
+  photo:"photos/project-05.png",
+  photoAlt:"誰是音樂祭 NPC 與黃永相數位紀念館",
+
+  links:[
+    {
+      label:"進入｜誰是音樂祭 NPC",
+      url:"npc.html"
+    },
+    {
+      label:"進入｜黃永相數位紀念館",
+      url:"camera.html"
+    }
+  ],
+
+  year:"",
+  role:"",
+  duration:"",
+  overview:"",
+  process:"",
+  outcome:""
+},
          
  {
           number:"06", category:"影音創作", type:"課程影音作品",
@@ -1222,6 +1267,7 @@ card.innerHTML = `
     }
    
     function openProject(p){
+      $("detailExtra").hidden = p.number === "05";
       safeImage($("detailImage"),p); $("detailNumber").textContent="PROJECT / "+p.number; $("detailTitle").textContent=p.title; $("detailSummary").textContent=p.summary;
       $("detailImage").classList.toggle(
   "keep-original",
