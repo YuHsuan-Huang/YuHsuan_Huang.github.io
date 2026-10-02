@@ -63,6 +63,49 @@
       color: #111;
       text-decoration: none;
     }
+    .facts {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  margin: 50px 0;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+}
+
+.fact {
+  padding: 24px;
+  border-right: 1px solid #444;
+}
+
+.fact:last-child {
+  border-right: 0;
+}
+
+.fact small {
+  display: block;
+  margin-bottom: 10px;
+  color: #999;
+  letter-spacing: 0.14em;
+}
+
+.fact strong {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@media (max-width: 700px) {
+  .facts {
+    grid-template-columns: 1fr;
+  }
+
+  .fact {
+    border-right: 0;
+    border-bottom: 1px solid #444;
+  }
+
+  .fact:last-child {
+    border-bottom: 0;
+  }
+}
   </style>
 </head>
 
@@ -83,36 +126,45 @@
     src="photos/project-05-camera.jpg"
     alt="黃永相數位紀念館網站畫面"
   >
+  <div class="facts">
+  <div class="fact">
+    <small>YEAR</small>
+    <strong>2025|114-1</strong>
+  </div>
+
+  <div class="fact">
+    <small>MY ROLE</small>
+    <strong>數位典藏|Metadata|內容策展</strong>
+  </div>
+
+  <div class="fact">
+    <small>DURATION</small>
+    <strong>12 weeks</strong>
+  </div>
+</div>
 
   <section>
-    <h2>01／專案背景</h2>
+    <h2>01／OVERVIEW</h2>
 
     <p>
-      本專案以黃永相相關的歷史照片與個人資料為核心，
-      希望透過數位典藏保存個人生命歷程與攝影紀錄，
-      讓原本分散的照片與資料能在數位空間中被重新整理與閱讀。
+      以黃永相（我祖父）相關歷史照片與資料為重點，建立數位記憶館，希望透過數位典藏的方式保存個人生命史與歷史影像，並讓原本分散的照片與資料能在具備脈絡的數位空間中被重新整理與閱讀。
+
     </p>
   </section>
 
   <section>
-    <h2>02／執行過程</h2>
+    <h2>02／PROCESS</h2>
 
     <p>
-      使用 Omeka 建立數位典藏網站，
-      將資料整理為 Items、Collections 與 Exhibits，
-      並為照片建立標題、年代、說明與其他 Metadata。
-      同時運用相簿與年表等方式重新組織資料。
+     使用 Omeka 建立數位典藏網站，將資料整理為 Items、Collections 與 Exhibits，並針對館藏內容進行描述與分類。除了單筆資料建置之外，也透過 Photo Album 與 Yearbook 等展示形式重新組織資料，使使用者能從不同脈絡理解人物經歷與歷史影像。
     </p>
   </section>
 
   <section>
-    <h2>03／成果與反思</h2>
+    <h2>03／OUTCOME</h2>
 
     <p>
-      完成具瀏覽、搜尋與策展功能的數位紀念館。
-      這次專案讓我理解，數位典藏不只是將照片上傳，
-      還需要透過資訊組織與描述，讓資料具備被發現、
-      理解及再次利用的可能。
+      最終完成可供瀏覽與檢索的數位記憶館，讓資料不只是被保存，也能透過分類、詮釋資料與數位展覽重新建立脈絡。
     </p>
 
     <a

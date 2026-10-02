@@ -63,6 +63,62 @@
       color: #111;
       text-decoration: none;
     }
+    .facts {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  margin: 50px 0;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+}
+
+.fact {
+  padding: 24px;
+  border-right: 1px solid #444;
+}
+
+.fact:last-child {
+  border-right: 0;
+}
+
+.fact small {
+  display: block;
+  margin-bottom: 10px;
+  color: #999;
+  letter-spacing: 0.14em;
+}
+
+.fact strong {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@media (max-width: 700px) {
+  .facts {
+    grid-template-columns: 1fr;
+  }
+
+  .fact {
+    border-right: 0;
+    border-bottom: 1px solid #444;
+  }
+
+  .fact:last-child {
+    border-bottom: 0;
+  }
+}
+.shorts-video {
+  width: min(420px, 100%);
+  margin: 40px auto 60px;
+  aspect-ratio: 9 / 16;
+  background: #000;
+}
+
+.shorts-video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
   </style>
 </head>
 
@@ -78,39 +134,53 @@
     將原本分散的音樂資訊整理成具有情境感與互動性的數位內容。
   </p>
 
-  <img
-    class="cover"
-    src="photos/project-05-npc.jpg"
-    alt="誰是音樂祭 NPC 專案畫面"
+  <div class="shorts-video">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/j18DEqcCeUA"
+    title="誰是音樂祭 NPC 作品展示"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
   >
+</iframe>
+</div>
+  <div class="facts">
+  <div class="fact">
+    <small>YEAR</small>
+    <strong>2025|114-1</strong>
+  </div>
+
+  <div class="fact">
+    <small>MY ROLE</small>
+    <strong>資訊內容規劃|互動設計|網站製作</strong>
+  </div>
+
+  <div class="fact">
+    <small>DURATION</small>
+    <strong>6 weeks</strong>
+  </div>
+</div>
 
   <section>
-    <h2>01／專案背景</h2>
+    <h2>01／OVERVIEW</h2>
 
     <p>
-      本專案以臺灣獨立樂團與音樂祭為主題，
-      希望透過數位圖書館的形式，介紹樂團配置、特色、
-      成員與相關音樂資訊，引導使用者認識臺灣獨立音樂文化。
+      以台灣獨立樂團、音樂祭為主題，嘗試將原本較靜態的數位資訊內容轉化為具有情境感與互動性的網頁體驗。包括樂團配置、特色、曲風、出片年等篩選，引導使用者探索台灣獨立樂團、音樂祭相關資訊。
     </p>
   </section>
 
   <section>
-    <h2>02／執行過程</h2>
+    <h2>02／PROCESS</h2>
 
     <p>
-      從主題發想開始，整理適合呈現的音樂資訊，
-      並規劃網站架構、內容分類與互動方式。
-      製作過程也考量使用者進入網站後的瀏覽順序與操作情境。
+      因為很常參加音樂祭，也是台灣獨立音樂的聽眾，所以以此為發想，進一步整理適合呈現的資訊內容（樂團配置、人數等），並思考如何利用網站結構、視覺元素與互動方式建立完整的瀏覽體驗。考量使用者進入網站後的探索順序，以及設計demo的情境。
     </p>
   </section>
 
   <section>
-    <h2>03／成果與反思</h2>
+    <h2>03／OUTCOME</h2>
 
     <p>
-      完成具主題性與互動性的數位圖書館企劃，
-      並嘗試將資訊內容、情境設計與互動方式結合，
-      讓數位館藏不只呈現資料，也能建立不同的使用體驗。
+      最終完成可供瀏覽與檢索的台灣獨立樂團小型資料庫，約七十組音樂人，涵蓋樂團簡介、曲風、人數、配置、2025出演活動等不同的Taxonomy，期望可以成為音樂祭籌辦人員邀請卡司前的參考工具。
     </p>
 
     <a
