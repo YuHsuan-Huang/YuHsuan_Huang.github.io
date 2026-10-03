@@ -95,9 +95,20 @@
     .fact:last-child{border:0}
     .fact small{display:block;color:#707075;letter-spacing:.12em}
     .detail-block{display:grid;grid-template-columns:.35fr 1fr;gap:40px;padding:36px 0;border-bottom:1px solid #c9c9cc}
-    .detail-block small{color:#707075;letter-spacing:.12em}
+    .detail-block small{
+  color:#606066;
+  letter-spacing:.12em;
+  font-size:1.15rem;
+  font-weight:700;
+  line-height:1.5;
+}
     .detail-block h3{margin:0 0 12px;font-size:1.6rem}
-    .detail-block p{margin:0;color:#505054}
+    .detail-block p{
+  margin:0;
+  color:#505054;
+  font-size:1.2rem;
+  line-height:2;
+}
 
     @media(max-width:800px){
       :root{--page:min(100% - 32px,1180px)}
@@ -1246,7 +1257,7 @@ card.innerHTML = `
 
   <div class="card-body">
     <div class="card-meta">
-      ${project.category} ／ ${project.type}
+      ${[project.category, project.type].filter(Boolean).join(" ／ ")}
     </div>
 
     <h3>
@@ -1254,7 +1265,7 @@ card.innerHTML = `
       <span>↗</span>
     </h3>
 
-    <p>${project.summary}</p>
+    ${project.summary ? `<p>${project.summary}</p>` : ""}
   </div>
 `;        safeImage(card.querySelector("img"),project);
         card.addEventListener("click",()=>openProject(project)); card.addEventListener("keydown",e=>{if(e.key==="Enter")openProject(project)});
@@ -1264,7 +1275,13 @@ card.innerHTML = `
    
     function openProject(p){
       $("detailExtra").hidden = p.number === "05";
-      safeImage($("detailImage"),p); $("detailNumber").textContent="PROJECT / "+p.number; $("detailTitle").textContent=p.title; $("detailSummary").textContent=p.summary;
+      safeImage($("detailImage"), p);
+
+$("detailNumber").textContent = "PROJECT / " + (p.number || "");
+$("detailTitle").textContent = p.title || "";
+
+$("detailSummary").textContent = p.summary || "";
+$("detailSummary").hidden = !p.summary;
       $("detailImage").classList.toggle(
   "keep-original",
   p.number === "01"
@@ -1287,7 +1304,9 @@ if(p.youtubeId){
   detailVideoWrap.hidden = true;
   detailYoutube.src = "";
 }
-      $("detailYear").textContent=p.year; $("detailRole").textContent=p.role; $("detailDuration").textContent=p.duration;
+      $("detailYear").textContent = p.year || "";
+$("detailRole").textContent = p.role || "";
+$("detailDuration").textContent = p.duration || "";
       const links = p.links || (
   p.link
     ? [{ label:"開啟作品網址", url:p.link }]
@@ -1305,7 +1324,13 @@ $("detailLinks").innerHTML = links.map(item => `
     <span>↗</span>
   </a>
 `).join("");
-      $("detailOverview").textContent=p.overview; $("detailProcess").textContent=p.process; $("detailOutcome").textContent=p.outcome;
+      $("detailOverview").textContent = p.overview || "";
+$("detailProcess").textContent = p.process || "";
+$("detailOutcome").textContent = p.outcome || "";
+
+$("detailOverview").closest(".detail-block").hidden = !p.overview;
+$("detailProcess").closest(".detail-block").hidden = !p.process;
+$("detailOutcome").closest(".detail-block").hidden = !p.outcome;
       $("projectDialog").showModal();
     }
     document.querySelector(".dialog-close").addEventListener("click",()=>$("projectDialog").close());
