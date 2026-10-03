@@ -553,7 +553,110 @@ section{
     padding:6px;
   }
 }
+.study-intro {
+  max-width: 760px;
+  margin: -20px 0 50px;
+  color: #b7b7bc;
+  font-size: 1.1rem;
+  line-height: 1.9;
+}
+
+.study-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.study-table {
+  width: 100%;
+  min-width: 1000px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.study-table th,
+.study-table td {
+  padding: 26px 22px;
+  border-bottom: 1px solid #414146;
+  border-right: 1px solid #414146;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.9;
+}
+
+.study-table th:last-child,
+.study-table td:last-child {
+  border-right: 0;
+}
+
+.study-table th {
+  color: #fff;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+}
+
+.study-table td {
+  color: #cfcfd3;
+}
+
+.study-table th:first-child,
+.study-table td:first-child {
+  width: 160px;
+}
+
+.study-table th:nth-child(2),
+.study-table td:nth-child(2) {
+  width: 35%;
+}
+
+.study-table td:first-child strong {
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+.study-table tbody tr:hover {
+  background: #19191b;
+}
+@media (max-width: 800px) {
+  .study-table {
+    min-width: 0;
+  }
+
+  .study-table thead {
+    display: none;
+  }
+
+  .study-table tbody,
+  .study-table tr,
+  .study-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .study-table tr {
+    margin-bottom: 28px;
+    border: 1px solid #414146;
+  }
+
+  .study-table td,
+  .study-table td:first-child,
+  .study-table td:nth-child(2) {
+    width: 100%;
+    border-right: 0;
+    padding: 20px;
+  }
+
+  .study-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 10px;
+    color: #88888e;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+}
 </style>
+
 </head>
 
 <body>
@@ -673,35 +776,130 @@ section{
     <p class="eyebrow">STUDY PLAN</p>
     <h2 class="info-title">讀書計畫</h2>
 
-    <div class="article-layout">
-      <aside>01｜申請動機</aside>
-      <div>
-        <h3>為什麼選擇這個領域</h3>
-        <p>
-          在這裡寫你的申請動機，以及過去哪些課程或經驗，
-          讓你開始關注這個研究領域。
-        </p>
-      </div>
-    </div>
+    <p class="study-intro">
+      從大四專題延伸至碩士論文，持續累積使用者研究、
+      資訊行為、多模態互動與研究方法相關能力。
+    </p>
 
-    <div class="article-layout">
-      <aside>02｜學習規劃</aside>
-      <div>
-        <h3>入學後的學習方向</h3>
-        <p>
-          說明希望修習的課程、培養的能力，以及預計投入的研究方向。
-        </p>
-      </div>
-    </div>
+    <div class="study-table-wrap">
+      <table class="study-table">
+        <thead>
+          <tr>
+            <th>階段</th>
+            <th>修課、學習規劃</th>
+            <th>論文研究規劃</th>
+          </tr>
+        </thead>
 
-    <div class="article-layout">
-      <aside>03｜未來目標</aside>
-      <div>
-        <h3>完成學業後的規劃</h3>
-        <p>
-          說明你希望從事的研究、工作或繼續發展的專業方向。
-        </p>
-      </div>
+        <tbody>
+          <tr>
+            <td data-label="階段">
+              <strong>大四上至寒假</strong>
+            </td>
+
+            <td data-label="修課、學習規劃">
+              修習系內選修及專題一，持續進行視障者捷運搭乘輔助系統相關研究，
+              準備研究所推甄，同時修習心理測驗、心理實驗法、
+              病態心理學等輔系課程。
+            </td>
+
+            <td data-label="論文研究規劃">
+              以林維真教授為指導教授，每週參加研究室 meeting，
+              進一步整理視障者於捷運環境中的資訊取得、環境辨識與操作需求，
+              蒐集國內外無障礙資訊服務及產品，進行競品分析，
+              並查詢多模態互動與輔助科技相關文獻，逐步聚焦研究問題。
+            </td>
+          </tr>
+
+          <tr>
+            <td data-label="階段">
+              <strong>大四下至暑假</strong>
+            </td>
+
+            <td data-label="修課、學習規劃">
+              完成心理學輔系所需課程，預計修習性格或社會心理學，
+              修習專題二，持續累積研究方法與使用者研究經驗。
+            </td>
+
+            <td data-label="論文研究規劃">
+              完成大學專題的初步研究，整理研究結果與限制，
+              並將其作為碩士論文的前導研究，思考如何從系統實作，
+              進一步發展為使用者需求、資訊行為與多模態資訊呈現效果之研究。
+            </td>
+          </tr>
+
+          <tr>
+            <td data-label="階段">
+              <strong>碩一上至寒假</strong>
+            </td>
+
+            <td data-label="修課、學習規劃">
+              修習碩班必修課程，如研究方法、資訊學研討等；
+              選修資訊視覺化、資訊搜尋與決策行為研討等課程。
+            </td>
+
+            <td data-label="論文研究規劃">
+              多參加研討及視障者相關活動，進行完整文獻回顧，
+              聚焦視障者在捷運移動過程中的資訊需求與決策歷程，
+              建立研究架構、研究變項及研究方法，
+              並規劃訪談、任務實驗或使用者研究。
+            </td>
+          </tr>
+
+          <tr>
+            <td data-label="階段">
+              <strong>碩一下至暑假</strong>
+            </td>
+
+            <td data-label="修課、學習規劃">
+              持續完成必修課程，如資訊組織研討、讀者服務研討；
+              選修心理學理論於圖資研究中之應用、
+              文本探勘方法與應用等課程。
+            </td>
+
+            <td data-label="論文研究規劃">
+              結合心理學與資訊行為理論，設計不同的多模態資訊呈現方式，
+              如語音、觸覺、文字／圖像或情境提示，建立研究原型；
+              進行前導訪談與前測，依結果修正研究工具及實驗流程。
+            </td>
+          </tr>
+
+          <tr>
+            <td data-label="階段">
+              <strong>碩二上至寒假</strong>
+            </td>
+
+            <td data-label="修課、學習規劃">
+              選修數位決策：資料視覺化與機器學習等與資料分析、
+              資訊科技相關課程，補強量化分析與資料解讀能力。
+            </td>
+
+            <td data-label="論文研究規劃">
+              進行正式研究，邀請目標使用者參與任務測試或訪談，
+              比較不同多模態資訊設計對資訊取得效率、操作負荷、
+              決策表現與使用經驗的影響，
+              完成資料整理、統計分析及研究結果撰寫。
+            </td>
+          </tr>
+
+          <tr>
+            <td data-label="階段">
+              <strong>碩二下至暑假</strong>
+            </td>
+
+            <td data-label="修課、學習規劃">
+              依研究需求補充相關專題課程，統整研究所期間所學。
+              若有餘力，期望申請至日本進行短期交換學習。
+            </td>
+
+            <td data-label="論文研究規劃">
+              完成研究結果討論與論文全文，提出適用於視障者大眾運輸
+              資訊服務的多模態資訊設計原則與實務建議，
+              完成論文口試，並視研究成果整理投稿研討會或期刊。
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
